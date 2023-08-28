@@ -27,7 +27,27 @@
 .App-link {
   color: #61dafb;
 }
+.av-notify-dashboard {
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+.av-notify-mulltistep {
+  width: 500px;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+}
 
+/* .av-notify-steppper {
+  width: 70%;
+} */
+.av-notify-step {
+  margin-top: 2rem;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
