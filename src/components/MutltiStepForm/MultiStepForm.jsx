@@ -54,7 +54,7 @@ export const Wizard = ({ children, initialValues, onSubmit }) => {
       {(formik) => (
         <Form>
           <div className="av-notify-steppper">
-            <Stepper activeStep={stepNumber}>
+            {/* <Stepper activeStep={stepNumber}>
               {steps.map((currentStep) => {
                 const label = currentStep.props.stepName;
                 return (
@@ -63,14 +63,14 @@ export const Wizard = ({ children, initialValues, onSubmit }) => {
                   </Step>
                 );
               })}
-            </Stepper>
+            </Stepper> */}
           </div>
           <div className="av-notify-step">{step}</div>
-          <FormNavigation
+          {/* <FormNavigation
             isLastStep={isLastStep}
             hasPrevious={stepNumber > 0}
             onBackClick={() => previous(formik.value)}
-          />
+          /> */}
           {/* <Debug /> */}
         </Form>
       )}

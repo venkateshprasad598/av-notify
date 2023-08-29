@@ -1,0 +1,413 @@
+:root {
+        /* fonts */
+        --font-sf-pro-display: "SF Pro Display", sans-serif;
+        --font-primary: "Supreme", sans-serif;
+        --font-secondary: "Aeonik", sans-serif;
+        --base-font-size: 16px;
+        --default-font-weight: 400;
+        --default-font-height: 1.25;
+        --default-font-size: 18px;
+        --default-font-style: normal;
+
+        --heading1-font-size: 26px;
+        --heading2-font-size: 22px;
+        --heading3-font-size: 20px;
+        --heading4-font-size: 18px;
+        --heading5-font-size: 16px;
+        --heading6-font-size: 14px;
+        --headings-font-weight: 500;
+        --headings-font-line-height: 125%;
+
+        /* SIDEBAR NAVIGATION */
+        --sidebar-min-width: 80px;
+        --sidebar-max-width: 180px;
+
+        /* HEADER */
+        --header-height: 80px;
+
+        /* MODAL */
+        --modal-width-sm: 400px;
+        --modal-width-md: 600px;
+        --modal-width-lg: 800px;
+        --modal-width-xl: 1100px;
+
+        --ave-color-black: #000000;
+        --ave-color-white: #ffffff;
+
+        --ave-primary: #215fff;
+        --ave-primary_RGB: 33, 95, 255;
+        --ave-primary-01: #3d73ff;
+        --ave-primary-02: #5081ff;
+        --ave-primary-03: #648fff;
+        --ave-primary-04: #7ca1ff;
+        --ave-primary-05: #97b4ff;
+        --ave-primary-06: #afc6ff;
+        --ave-primary-07: #d0ddff;
+        --ave-primary-08: #eef3ff;
+
+        /* --ave-primary_RGB: 183, 0, 30;
+    --ave-primary: rgb(var(--ave-primary_RGB));
+    --ave-primary-01: #e81335;
+    --ave-primary-02: #ed3856;
+    --ave-primary-03: #f47188;
+    --ave-primary-04: #fca9b9;
+    --ave-primary-05: #faccd3;
+    --ave-primary-06: #fde5e8;
+    --ave-primary-07: #fde5e8;
+    --ave-primary-08: #fde5e8; */
+
+        --ave-primary-text: #0e0d35;
+        --ave-primary-description: #626c7a;
+        --ave-secondary-description: #7d8591;
+
+        --ave-other-yellow: #f59f3b;
+        --ave-other-red: #f5463b;
+        --ave-other-green: #50b56a;
+
+        --ave-gray-01: #8c939c;
+        --ave-gray-02: #999fa7;
+        --ave-gray-03: #a6abb2;
+        --ave-gray-04: #b3b7bd;
+        --ave-gray-05: #cfd1d3;
+        --ave-gray-06: #e8e9ea;
+        --ave-gray-07: #f7f7f7;
+
+        /* extra */
+
+        /* COLOR PALETTES */
+        --ave-color-white-shade-01: #ededed;
+        --ave-color-white-shade-02: #dbdbdb;
+        --ave-color-white-shade-03: #c8c8c8;
+        --ave-color-white-shade-04: #b6b6b6;
+        --ave-color-white-shade-05: #a4a4a4;
+        --ave-color-white-shade-06: #929292;
+        --ave-color-white-shade-07: #808080;
+        --ave-color-white-shade-08: #6d6d6d;
+        --ave-color-white-shade-09: #5b5b5b;
+        --ave-color-white-shade-10: #494949;
+        --ave-color-white-shade-11: #7b8393;
+
+        --ave-color-red-01: #ff0000;
+        --ave-color-red-02: #e33939;
+        --ave-color-red-03: #ff402e;
+        --ave-color-red-04: #ff4f45;
+        --ave-color-red-05: #e80415;
+
+        --ave-color-yellow-01: #ffc700;
+        --ave-color-yellow-02: #ffa800;
+        --ave-color-yellow-03: #fb8700;
+        --ave-color-yellow-04: #e29c3a;
+        --ave-color-yellow-05: #ffaf13;
+
+        --ave-color-green-01: #33bb47;
+        --ave-color-green-02: #25b60e;
+        --ave-color-green-03: #99c938;
+        --ave-color-green-04: #21df9b;
+        --ave-color-green-05: #2fdd91;
+        --ave-color-green-06: #0dc985;
+        --ave-color-green-07: #3ecc27;
+        --ave-color-green-08: #5db646;
+
+        --ave-color-cyan-01: #1ac0d6;
+        --ave-color-cyan-02: #1dcfb9;
+
+        --ave-color-blue-01: #3636ea;
+        --ave-color-blue-01_RGB: 54, 54, 234;
+        --ave-color-blue-02: var(--ave-primary);
+        --ave-color-blue-02_RGB: var(--ave-primary_RGB);
+
+        --ave-color-slate-01: #20304f;
+        --ave-color-slate-02: #3c4a65;
+        --ave-color-slate-03: #6b74a7;
+        --ave-color-slate-03_RGB: 107 116 167;
+        --ave-color-slate-03-shade-100: #eff0f5;
+        --ave-color-slate-03-shade-200: #cfd2e2;
+        --ave-color-slate-03-shade-300: #afb4cf;
+        --ave-color-slate-04: #666666;
+        --ave-color-state-05: #cccccc;
+
+        --ave-color-purple-01: var(--ave-color-blue-02);
+        /* this is change due to theme color updates*/
+        --ave-color-purple-02: var(--ave-color-blue-02);
+        /* this is change due to theme color updates*/
+        --ave-color-purple-03: var(--ave-color-blue-02);
+        /* this is change due to theme color updates*/
+
+        --ave-color-seashell-01: #f1f1f1;
+        --ave-color-silver-sand--01: #c0c0c0;
+        --ave-color-steel-01: var(--ave-secondary-description);
+        --ave-color-green-white-01: #e6eaed;
+        --ave-color-sand-white-01: #e7e1e1;
+        --ave-color-light-grey-01: #d9d9d9;
+        --ave-color-black-rock-01: var(--ave-primary-text);
+        --ave-color-grey-goose-01: #ced3d9;
+        --ave-color-bulgarian-rose-01: #45000b;
+        --ave-color-diesel-01: #170004;
+        --ave-color-liver-01: #524f4c;
+        --ave-color-star-dust-01: #a39e98;
+        --ave-color-star-dust-02: #f6f7fa;
+
+        --ave-color-hoki-01: #7182a4;
+        --ave-color-alabaster-01: #fafafa;
+        --ave-color-alabaster-02: #fcf8fd;
+        --ave-color-mist-blue-01: #686e86;
+        --ave-color-get-grey-01: var(--ave-primary-description);
+        --ave-color-get-grey-01_RGB: 98, 108, 122;
+        --ave-color-desert-strom-01: #f7f8f9;
+        --ave-color-grey-cloud-01: #b7b7b7;
+        --ave-color-cactus-01: #4a7755;
+        --ave-color-dusty-red-01: #b34050;
+        --ave-color-desert-storm-01: #f7f7f7;
+        --ave-color-porcelain-01: #f1f2f7;
+        --ave-color-bright-blue-01: #116cf8;
+        --ave-color-blue-chalk-01: #ebebfd;
+        --ave-color-mercury-grey-01: #e3e5e9;
+        --ave-color-iron-grey-01: #d3d6e5;
+        --ave-color-magnolia-01: #f9f3fc;
+        --ave-color-pearl-01: #f8f0fc;
+        --ave-color-dark-orchid-01: #9f37d6;
+        --ave-color-cantaloupe-01: #ffa724;
+        --ave-color-butterfly-blue-01: #349eec;
+        --ave-color-meteorite-02: #352176;
+        --ave-color-bean-red-01: #f05a5a;
+
+        --ave-color-cool-grey-01: #999fa7;
+        --ave-color-azul-01: #2765ff;
+        --ave-color-rosewood-01: #5c000f;
+        --ave-color-medium-forest-green-01: #1f702b;
+        --ave-color-titan-white-01: #eaf0ff;
+        --ave-color-mercury-02: #e5e5e5;
+        --ave-color-star-dust-03: #a0a0a0;
+        --ave-color-grey-goose-02: #cfcfcf;
+
+        --ave-color-coral-red-01: var(--ave-other-red);
+        --ave-color-deep-saffron-01: var(--ave-other-yellow);
+        --ave-color-boring-green-01: var(--ave-other-green);
+        --ave-color-blue-argentina: #7ac7ff;
+        --ave-color-blue-walls: #e3ebff;
+        --ave-color-blue-powder: #afc6ff;
+        --ave-color-saffron-jaipur: #f5a29d;
+        --ave-color-blue-malibu: #648fff;
+        --ave-color-boring-green-01_RGB: 80 181 106;
+        --ave-color-black-pearl-01: #080e28;
+        --ave-color-green-white-02: #e8e9ea;
+        --ave-color-green-white-02_RGB: 232, 233, 234;
+        --ave-color-green-white-03: #e9eaf2;
+        --ave-color-silver-sand-01: #c1c1c1;
+        --ave-color-mercury-03: #e6e6e6;
+        --ave-color-gainsboro-01: #dadbdf;
+
+        --ave-color-artyClick-deep-sky-blue-01: #0185ff;
+        --ave-color-casper-grey-01: #b4b9d2;
+        --ave-color-azul-blue-01: #2559fc;
+        --ave-color-medium-blue-01: #2500d8;
+        --ave-color-dawn-light-pink-01: #f8e6e9;
+        --ave-color-kelly-green-01: #20be20;
+        --ave-color-light-slate-grey-01: #737794;
+        --ave-color-off-green-01: #e9f9e9;
+        --ave-color-oasis-creme-01: #fcf0ce;
+        --ave-color-moonraker-01: #cbd4ef;
+
+        --ave-color-haiti-blue-01: #131936;
+        --ave-color-rich-blue-01: #0916fd;
+        --ave-color-mirage-black-01: #0d152a;
+        --ave-color-titan-white-01: #e9f0ff;
+
+        --ave-color-white-smoke-01: #f5f5f5;
+        --ave-color-white-smoke-03: #f4f5f6;
+        --ave-color-charcol-grey-01: #424242;
+        --ave-color-dark-violet-01: #8618c0;
+        --ave-color-dark-magenta-01: #68009e;
+        --ave-color-indigo-01: #4f0078;
+        --ave-color-deep-purple-01: #2f0047;
+
+        --ave-color-dark-mint-01: #34c759;
+        --ave-color-deep-saffron-02: #ff9736;
+        --ave-color-red-orange-01: #ff3b30;
+        --ave-color-lavender-pinocchio-01: #e0e0e0;
+        --ave-color-steel-grey-01: #798395;
+        --ave-color-pattens-blue-01: #e0f0ff;
+
+        --ave-color-grey-chateau-01: #a6abb2;
+        --ave-color-grey-chateau-01_RGB: 166, 171, 178;
+        --ave-color-strong-blue-01: #2812dd;
+        --ave-color-blue-chalk-02: #efe8fc;
+        --ave-color-lilac-01: #afadff;
+        --ave-color-aluminium-grey-01: #a9adbd;
+        --ave-color-regent-grey-01: #8a9099;
+        --ave-color-purple-pink-01: #e343d0;
+        --ave-color-heliotrope-purple-01: #de60ff;
+        --ave-color-purple-mimosa-01: #a66fff;
+
+        --ave-color-gainsboro-grey-01: #dadae5;
+        --ave-color-geyser-grey-01: #dadde2;
+        --ave-color-blueberry-blue-01: #4442a1;
+        --ave-color-regent-grey-02: #9098a7;
+        --ave-color-flush-mahogany-01: #c43636;
+        --ave-color-clover-green-01: #41a550;
+        --ave-color-geyser-grey-02: #dddfe8;
+
+        --ave-color-aqua-haze-grey-01: #f2f3f5;
+        --ave-color-soft-peach-grey-01: #efefef;
+        --ave-color-bmagnolia-grey-01: #f5f5fe;
+        --ave-color-grey-nickel-01: #c3c3c4;
+        --ave-color-pumpkin-orange-01: #ff7410;
+        --ave-color-lava-red-01: #ec1d1d;
+        --ave-color-artyclick-ocean-blue-01: #033fe6;
+        --ave-color-soft-peach-grey-02: #eee;
+        --ave-color-green-white-grey-01: #e8e8e8;
+        --ave-color-white-smoke-grey-01: #f3f4f5;
+
+        --ave-color-ghost-grey-01: #c6cdda;
+        --ave-color-magnolia-whitegrey-01: #faf4fc;
+        --ave-color-black-pearl-02: #05131f;
+        --ave-color-almost-black-01: #060b14;
+
+        --ave-color-feta-01: #ecfaea;
+        --ave-color-cantaloupe-02: #faa733;
+        --ave-color-mercury-grey-02: #e1e3ed;
+        --ave-color-alabaster-white-01: #fbfbfb;
+        --ave-color-casper-01: #b0b6d0;
+        --ave-color-desert-storm-white-01: #f8f8f8;
+
+        --ave-color-white-smoke-02: #f6f6f6;
+        --ave-color-electric-purple-01: #a020f0;
+
+        --ave-color-lavender-mist-02: #e7e9f2;
+        --ave-color-wild-blue-younder-01: #7495b3;
+        --ave-color-aqua-haze-01: #f2f3f5;
+        --ave-color-dark-orange-01: #f99600;
+        --ave-color-bright-orange-01: #ff5c00;
+
+        --ave-color-amethyst-smoke-01: #9498ac;
+        --ave-color-light-royal-blue-01: #4141fc;
+        --ave-color-porcelain-whitegrey-01: #f0f1f6;
+        --ave-color-aqua-haze-02: #f3f3f3;
+        --ave-color-periwinkle-grey-01: #c9cddf;
+        --ave-color-dawn-pink-01: #ebebeb;
+        --ave-color-grey-goose-03: #d7cfcf;
+        --ave-color-platinum-01: #e3e3e3;
+        --ave-color-seashell-02: #f0f0f0;
+        --ave-color-tropical-blue-01: #bde3f3;
+
+        --ave-body-background: #f7f8fa;
+        --ave-color-baltic-sea-01: #e7e9f2;
+        --ave-color-artyclick-red-01: #ff0303;
+        --ave-color-blue-charcol-01: #292d32;
+        --ave-color-elemental-01: #cfd1d3;
+        --ave-color-haddocksSweater-01: #2980b9;
+
+        /* rgba color start */
+        --ave-color-slate-blue-01: 107, 116, 167;
+        --ave-color-slate-white-01: 255, 255, 255;
+        --ave-color-slate-pastel-grey-01: 204, 204, 204;
+        --ave-color-slate-light-grey-01: 217, 217, 217;
+        --ave-color-slate-black-01: 0, 0, 0;
+
+        --ave-color-slate-kelly-green-01: 32, 190, 32;
+        --ave-color-slate-light-blue-01: 115, 115, 255;
+        --ave-color-slate-azul-01: var(--ave-primary_RGB);
+        --ave-color-slate-artyclick-ocean-blue-01: 6, 63, 230;
+        --ave-color-slate-medium-green-01: 51, 187, 71;
+
+        --ave-color-slate-cloud-burst-01: 32, 48, 79;
+        --ave-color-slate-light-red-01: 255, 79, 69;
+        --ave-color-slate-dark-orchid-01: 153, 47, 209;
+
+        --ave-color-slate-dark-mint-01: 52, 199, 89;
+        --ave-color-slate-red-orange-01: 255, 64, 46;
+        --ave-color-slate-mercury-01: 240, 227, 227;
+        --ave-color-slate-black-pearl-01: 8, 14, 40;
+        --ave-color-slate-dark-01: 28, 35, 49;
+        --ave-color-slate-mirage-01: 20, 25, 36;
+        --ave-color-slate-palatinate-blue-01: 54, 54, 234;
+
+        --ave-color-slate-mist-blue-01: 104, 110, 134;
+        --ave-color-slate-mirage-02: 13, 21, 42;
+        --ave-color-slate-soft-peach-01: 237, 237, 237;
+        --ave-color-slate-steel-01: 121, 131, 149;
+        --ave-color-slate-white-smoke-01: 244, 245, 246;
+        --ave-color-slate-wild-blue-yonder-01: 134, 142, 183;
+
+        /* color gradient */
+
+        /* new color */
+        --ave-color-blue-dusk: #8c939c;
+        /* rgba color end */
+        --ave-color-pixel-bleeding: 183, 0, 30;
+        /* Gradient Colors */
+        --ave-gradient-purple: linear-gradient(221deg,
+                        #992fd1 15.27%,
+                        #0185ff 84.48%);
+        --ave-gradient-bond: radial-gradient(74.46% 427.45% at 30.88% 110.54%,
+                        #12364a 0%,
+                        #337795 62.22%,
+                        #215c7a 100%);
+        --ave-gradient-fund: radial-gradient(74.46% 427.45% at 30.88% 110.54%,
+                        #641a3f 0%,
+                        #9e3442 62.22%,
+                        #c04759 100%);
+        --ave-gradient-basket: radial-gradient(74.46% 427.45% at 30.88% 110.54%,
+                        #2c5534 0%,
+                        #4a7655 62.22%,
+                        #4a7755 100%);
+        --ave-gradient-panther: linear-gradient(263.84deg,
+                        #992fd1 4.02%,
+                        #ff386e 110.08%);
+        --ave-gradient-neptune: linear-gradient(221deg,
+                        #3636ea 15.27%,
+                        #0185ff 84.48%);
+        --ave-gradient-sunset: linear-gradient(268.53deg,
+                        #992fd1 2.72%,
+                        #d12fcb 104.42%);
+        --ave-gradient-mercury: linear-gradient(221deg,
+                        rgb(47 47 233 / 30%) 15.27%,
+                        rgb(26 145 255 / 30%) 84.48%);
+        --ave-gradient-navy-purple: radial-gradient(74.46% 427.45% at 30.88% 110.54%,
+                        #1c1b59 0%,
+                        #282695 62.22%,
+                        #8222b5 100%);
+        --ave-gradient-yellow: radial-gradient(110.86% 664.21% at 0% 73.68%,
+                        #583718 0%,
+                        #845920 62.22%,
+                        #6a332a 100%);
+        --ave-gradient-dark-sky: radial-gradient(74.46% 427.45% at 30.88% 110.54%,
+                        #12364a 0%,
+                        #337795 62.22%,
+                        #215c7a 100%);
+        --ave-gradient-green: radial-gradient(74.46% 427.45% at 30.88% 110.54%,
+                        #2c5534 0%,
+                        #4a7655 62.22%,
+                        #4a7755 100%);
+        --ave-gradient-red: radial-gradient(74.46% 427.45% at 30.88% 110.54%,
+                        #641a3f 0%,
+                        #9e3442 62.22%,
+                        #c04759 100%);
+        --ave-gradient-dark-brown: radial-gradient(74.46% 427.45% at 30.88% 110.54%,
+                        #3c2440 0%,
+                        #28212c 62.22%,
+                        #582f66 100%);
+        --ave-gradient-hot-red: radial-gradient(110.86% 664.21% at 0% 73.68%,
+                        #6e2d2d 0%,
+                        #9e3f3f 62.22%,
+                        #532121 100%);
+        /* Link Color */
+        --link-color: #3c4a65;
+        --link-hover: var(--ave-primary);
+
+        /* Placeholder Text Color */
+        --placeholder-color: #a4a4a4;
+        --placeholder-color-active: #6d6d6d;
+
+        /* For Text Selection Colors*/
+        --select-text-color: var(--ave-color-white);
+        --select-text-bg: var(--ave-primary);
+
+        /* Custom Scrollbar Colors*/
+        --scrollbar-track: #e2e2e2;
+        --scrollbar-thumb: #a2a2a2;
+        --scrollbar-thumb-hover: #828282;
+
+        --ave-color-kangaroo-01: #ccc6be;
+        --scrollbar-thumb-body: #e7e7e7;
+}
