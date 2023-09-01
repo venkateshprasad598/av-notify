@@ -1,18 +1,16 @@
 import { TextField } from "@mui/material";
-import { useField } from "formik";
 import React from "react";
 
-const InputField = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
-
+const InputField = ({ label, rows, multiline, ...props }) => {
   return (
     <TextField
+      id="outlined-multiline-static"
       fullWidth
       label={label}
-      {...field}
+      style={{ margin: "8px" }}
+      multiline={multiline ? multiline : false}
+      rows={multiline ? rows : 0}
       {...props}
-      error={meta.touched && Boolean(meta.error)}
-      helperText={meta.touched && meta.error}
     />
   );
 };

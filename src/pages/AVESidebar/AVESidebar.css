@@ -47,6 +47,7 @@ main {
     align-items: center;
     justify-content: space-between;
     padding: 20px 15px;
+    flex-wrap: nowrap;
 }
 
 .logo {

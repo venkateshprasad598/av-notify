@@ -1,0 +1,13 @@
+.ave-update-template {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.ave-update-template-container {
+    padding: 2rem;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}

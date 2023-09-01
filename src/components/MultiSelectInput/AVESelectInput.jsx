@@ -16,17 +16,15 @@ const MenuProps = {
   },
 };
 
-const MultiSelectInput = ({ label, ...props }) => {
-  const { list, value, handleChange } = props;
-  const theme = useTheme();
-  const [field, meta] = useField(props);
+const AVESelectInput = ({ label, ...props }) => {
+  const { list, inputValue, handleChange, isMultiple, inputTheme } = props;
 
   function getStyles(name, personName, theme) {
     return {
       fontWeight:
-        personName.indexOf(name) === -1
-          ? theme.typography.fontWeightRegular
-          : theme.typography.fontWeightMedium,
+        personName?.indexOf(name) === -1
+          ? theme?.typography.fontWeightRegular
+          : theme?.typography.fontWeightMedium,
     };
   }
 
@@ -36,24 +34,28 @@ const MultiSelectInput = ({ label, ...props }) => {
       <Select
         labelId="demo-multiple-name-label"
         id="demo-multiple-name"
-        multiple
-        value={value}
+        multiple={isMultiple ? true : false}
+        value={inputValue}
         onChange={handleChange}
         input={<OutlinedInput label={label} />}
         MenuProps={MenuProps}
+     
       >
-        {list.map((data) => (
-          <MenuItem
-            key={data}
-            value={data}
-            style={getStyles(data, value, theme)}
-          >
-            {data}
-          </MenuItem>
-        ))}
+        {list?.length
+          ? list?.map((name) => (
+              <MenuItem
+                key={name}
+                value={name}
+                style={getStyles(name, inputValue, inputTheme)}
+                
+              >
+                {name}
+              </MenuItem>
+            ))
+          : null}
       </Select>
     </FormControl>
   );
 };
 
-export default MultiSelectInput;
+export default AVESelectInput;

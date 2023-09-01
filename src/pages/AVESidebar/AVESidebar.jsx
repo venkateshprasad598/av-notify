@@ -1,22 +1,32 @@
 import React, { useState } from "react";
-import {
-  FaTh,
-  FaBars,
-  FaUserAlt,
-  FaRegChartBar,
-  FaCommentAlt,
-  FaShoppingBag,
-  FaThList,
-} from "react-icons/fa";
-
-import { BiLogOut, BiNotification } from "react-icons/bi";
-import { MdOutlineEditNotifications } from "react-icons/md";
-import { GoReport } from "react-icons/go";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import AppBar from "@mui/material/AppBar";
+import CssBaseline from "@mui/material/CssBaseline";
+import Toolbar from "@mui/material/Toolbar";
+import List from "@mui/material/List";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 import { NavLink } from "react-router-dom";
-import "./AVESidebar.css";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import CategoryIcon from "@mui/icons-material/Category";
+import EditNoteIcon from "@mui/icons-material/EditNote";
+import FeedbackIcon from "@mui/icons-material/Feedback";
+import { Avatar, Button, Tooltip } from "@mui/material";
 import { useMsal } from "@azure/msal-react";
 
-const AVESidebar = ({ children }) => {
+const drawerWidth = 280;
+
+export default function ClippedDrawer({ children }) {
+  const { instance } = useMsal();
+
+  const [activeSidebar, setActiveSidebar] = useState("Send to users");
   const localStorageUser = localStorage.getItem("User");
   const UserObj = JSON.parse(localStorageUser);
 
@@ -24,79 +34,152 @@ const AVESidebar = ({ children }) => {
     firstName: UserObj?.givenName ? UserObj?.givenName : "",
     lastName: UserObj?.surname ? UserObj?.surname : "",
   };
-
   const userName = `${User.firstName} ${User.lastName}`;
-  const { instance } = useMsal();
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
-
-  const menuItem = [
-    {
-      path: "/",
-      name: "Send",
-      icon: <BiNotification />,
-    },
-    {
-      path: "/update-template",
-      name: "Update Template",
-      icon: <MdOutlineEditNotifications />,
-    },
-    {
-      path: "/reports",
-      name: "Reports",
-      icon: <GoReport />,
-    },
-  ];
+  const avatarName = `${User?.firstName?.[0] ? User?.firstName?.[0] : ""}${
+    User?.lastName?.[0] ? User?.lastName?.[0] : ""
+  }`;
 
   const onLogout = () => {
     const activeAccount = instance.getActiveAccount();
     instance.logoutRedirect({ account: activeAccount });
   };
-  return (
-    <div className="container">
-      <div style={{ width: isOpen ? "200px" : "50px" }} className="AVESidebar">
-        <div className="AVESidebar-container">
-          <div className="top_section">
-            <span
-              style={{ display: isOpen ? "block" : "none" }}
-              className="logo"
-            >
-              {userName && userName?.length > 10
-                ? userName.substring(0, 10) + "..."
-                : userName}
-            </span>
-            <div
-              style={{ marginLeft: isOpen ? "50px" : "0px" }}
-              className="bars"
-            >
-              <FaBars onClick={toggle} />
-            </div>
-          </div>
-          {menuItem.map((item, index) => (
-            <NavLink
-              to={item.path}
-              key={index}
-              className="link"
-              activeclassName="active"
-            >
-              <div className="icon">{item.icon}</div>
-              <div
-                style={{ display: isOpen ? "block" : "none" }}
-                className="link_text"
-              >
-                {item.name}
-              </div>
-            </NavLink>
-          ))}
-        </div>
-        <div className="ava-sidebar-logout" onClick={onLogout}>
-          {isOpen && <span className="ava-sidebar-logout-name">Log out</span>}
-          <span className="ava-sidebar-logout-icon">{<BiLogOut />}</span>
-        </div>
-      </div>
-      <main>{children}</main>
-    </div>
-  );
-};
 
-export default AVESidebar;
+  const onactiveBarChange = (name) => {
+    setActiveSidebar(name);
+  };
+  const menuItem = [
+    {
+      path: "/",
+      name: "Send to users",
+      icon: <NotificationsActiveIcon />,
+    },
+    {
+      path: "/coming-soon",
+      name: "Send to category",
+      icon: <CategoryIcon />,
+    },
+    {
+      path: "/update-template",
+      name: "Update Template",
+      icon: <EditNoteIcon />,
+    },
+  ];
+
+  const menuItemSecond = [
+    {
+      path: "/coming-soon",
+      name: "Reports",
+      icon: <FeedbackIcon />,
+    },
+  ];
+
+  return (
+    <Box sx={{ display: "flex" }}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        sx={{
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+          background: "#215fff",
+        }}
+      >
+        <Toolbar className="flex items-center justify-between">
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            style={{ fontWeight: "600" }}
+          >
+            AV ENGAGE
+          </Typography>
+          <Typography
+            noWrap
+            component="div"
+            className="flex items-center gap-3"
+          >
+            <Tooltip title={userName} variant="soft">
+              <Avatar
+                style={{ height: "32px", width: "32px", fontSize: "12px" }}
+              >
+                {avatarName}
+              </Avatar>
+            </Tooltip>
+            <span className="cursor-pointer" onClick={onLogout}>
+              Logout
+            </span>
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        variant="permanent"
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          [`& .MuiDrawer-paper`]: {
+            width: drawerWidth,
+            boxSizing: "border-box",
+          },
+        }}
+      >
+        <Toolbar />
+        <Box sx={{ overflow: "auto" }}>
+          <List>
+            {menuItem.map((item, index) => (
+              <NavLink
+                to={item.path}
+                key={index}
+                activeclassName="ave-sidebar-active"
+                onClick={() => onactiveBarChange(item.name)}
+              >
+                <ListItem
+                  key={item}
+                  disablePadding
+                  style={{
+                    backgroundColor:
+                      activeSidebar == item.name ? "rgba(0, 0, 0, 0.04)" : "",
+                  }}
+                >
+                  <ListItemButton>
+                    <ListItemIcon style={{ fontSize: "24px" }}>
+                      {item.icon}
+                    </ListItemIcon>
+                    <ListItemText primary={item.name} />
+                  </ListItemButton>
+                </ListItem>
+              </NavLink>
+            ))}
+          </List>
+          <Divider />
+          <List>
+            {menuItemSecond.map((item, index) => (
+              <NavLink
+                to={item.path}
+                key={index}
+                onClick={() => onactiveBarChange(item.name)}
+              >
+                <ListItem
+                  key={item}
+                  disablePadding
+                  style={{
+                    backgroundColor:
+                      activeSidebar == item.name ? "rgba(0, 0, 0, 0.04)" : "",
+                  }}
+                >
+                  <ListItemButton>
+                    <ListItemIcon style={{ fontSize: "24px" }}>
+                      {item.icon}
+                    </ListItemIcon>
+                    <ListItemText primary={item.name} />
+                  </ListItemButton>
+                </ListItem>
+              </NavLink>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
+      <Box component="main" sx={{ flexGrow: 1 }}>
+        {children}
+      </Box>
+    </Box>
+  );
+}

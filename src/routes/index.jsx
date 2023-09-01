@@ -1,4 +1,8 @@
+import AVECreateTemplate from "../components/AVECreateTemplate/AVECreateTemplate";
 import AVESendToUsers from "../pages/AVESendNotifications/AVESendToUsers";
+import AVEAddTemplate from "../pages/AVEUpdateTemplate/AVEAddTemplate";
+import AVEUpdateTemplate from "../pages/AVEUpdateTemplate/AVEUpdateTemplate";
+import ComingSoon from "../pages/ComingSoon/ComingSoon";
 
 export const routeList = [
   // _BEGIN > DEVELOPER AREA 51 PAGES < SHB
@@ -16,19 +20,31 @@ export const routeList = [
   {
     id: "updateTemplate",
     path: "/update-template",
-    name: "send",
+    name: "update",
     icon: "",
-    element: <AVESendToUsers />,
+    element: <AVEAddTemplate />,
     isVisible: true,
     isAuth: true,
     accessRoles: [],
   },
+
+  {
+    id: "addTemplate",
+    path: "/add-template",
+    name: "add",
+    icon: "",
+    element: <AVEAddTemplate />,
+    isVisible: true,
+    isAuth: true,
+    accessRoles: [],
+  },
+
   {
     id: "reports",
-    path: "/reports",
+    path: "/coming-soon",
     name: "reports",
     icon: "",
-    element: <AVESendToUsers />,
+    element: <ComingSoon />,
     isVisible: true,
     isAuth: true,
     accessRoles: [],

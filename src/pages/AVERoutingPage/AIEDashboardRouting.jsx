@@ -11,17 +11,15 @@ import useAVEDashboard from "../../hooks/AVEDashboard/useAVEDashboard";
 const AIEDashboardRouting = () => {
   useAVEDashboard();
   return (
-    <RequireAuth>
-      <div>
-        <AVESidebar>
-          <section>
-            <main>
-              <Outlet />
-            </main>
-          </section>
-        </AVESidebar>
-      </div>
-    </RequireAuth>
+    <div>
+      <AVESidebar>
+        <section>
+          <main className="ave-body">
+            <Outlet />
+          </main>
+        </section>
+      </AVESidebar>
+    </div>
   );
 };
 

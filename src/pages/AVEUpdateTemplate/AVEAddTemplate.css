@@ -1,0 +1,35 @@
+.ave-add-template {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ave-add-template-container {
+    margin: 2rem;
+    padding: 2rem;
+    width: 700px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.ave-create-add-new-template {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.ave-create-add-new-template>svg {
+    color: var(--ave-primary);
+
+}
+
+.ave-create-template-showAllTemplates {
+    width: 100%;
+    display: inline-block;
+    /* justify-content: space-between;
+    align-items: center; */
+}
